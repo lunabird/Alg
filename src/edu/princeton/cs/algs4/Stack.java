@@ -149,21 +149,99 @@ public class Stack<Item> implements Iterable<Item> {
             return item;
         }
     }
+    
+    
+    /**
+     * ÅÐ¶Ï»ØÎÄ×Ö·û´®
+     */
+    public static boolean isHuiWenStr(char[] s){
+    	int len = s.length;
+    	Stack<String> stack = new Stack<String>();
+    	for(int i=0;i<len/2;i++){
+			String Item = s[i]+"";
+			stack.push(Item);
+		}
+    	if(len%2==0){//Å¼Êý
+    		for(int i=len/2;i<len;i++){
+    			String it = stack.pop();
+    			if(!(s[i]+"").equals(it)){
+    				return false;
+    			}
+    		}
+    		return true;
+    	}else{//ÆæÊý
+    		for(int i=len/2+1;i<len;i++){
+    			String it = stack.pop();
+    			if(!(s[i]+"").equals(it)){
+    				return false;
+    			}
+    		}
+    		return true;
+    	}
+    }
 
-
+    
+    /**
+     * À¨ºÅÆ¥ÅäÎÊÌâ
+     */
+    public static void bracketMatch(String s){
+    	char[] strArr = s.toCharArray();
+    	int i=0;
+    	Stack<String> stack = new Stack<String>();
+    	while(i<strArr.length){
+    		String item = strArr[i]+"";
+    		if(item.equals("(")||item.equals("[")){
+    			stack.push(item);
+    		}else if(item.equals(")")||item.equals("]")){
+    			if(stack.isEmpty()){
+    				System.out.println("not match");
+    				return;
+    			}
+    			String popItem = stack.pop();
+    			if((popItem.equals("(")&&item.equals(")")) || (popItem.equals("[")&&item.equals("]"))  ){
+    			
+    			}else{
+    				System.out.println("not match");
+    				return;
+    			}
+    		}
+    		i++;
+    	}
+    	if(stack.isEmpty()){
+    		System.out.println("match");
+    	}else{
+    		System.out.println("not match");
+    	}
+    }
+    
     /**
      * Unit tests the <tt>Stack</tt> data type.
      */
     public static void main(String[] args) {
-        Stack<String> s = new Stack<String>();
-        while (!StdIn.isEmpty()) {
-            String item = StdIn.readString();
-            if (!item.equals("-")) s.push(item);
-            else if (!s.isEmpty()) StdOut.print(s.pop() + " ");
-        }
-        StdOut.println("(" + s.size() + " left on stack)");
+//        Stack<String> s = new Stack<String>();
+//        while (!StdIn.isEmpty()) {
+//            String item = StdIn.readString();
+//            if (!item.equals("-")) s.push(item);
+//            else if (!s.isEmpty()) StdOut.print(s.pop() + " ");
+//        }
+//        StdOut.println("(" + s.size() + " left on stack)");
+    	
+//    	String s = "12345654321";
+//    	boolean flag = isHuiWenStr(s.toCharArray());
+//    	System.out.println(flag);
+    	
+    	bracketMatch("dfa(sdf)df[dfds(dfd)]");
+    	bracketMatch("dfa(sdf)df[dfds(dfd)]]");
+    	bracketMatch("dfa(sdf)df[dfds(dfd)][(])");
     }
 }
+	
+
+
+
+
+
+
 
 
 

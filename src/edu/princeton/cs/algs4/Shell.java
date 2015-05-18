@@ -117,7 +117,8 @@ public class Shell {
      * and prints them to standard output in ascending order. 
      */
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
+//        String[] a = StdIn.readAllStrings();
+    	Integer[]  a = {46,79,56,38,40,84};
         Shell.sort(a);
         show(a);
     }

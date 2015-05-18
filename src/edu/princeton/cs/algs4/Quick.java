@@ -49,12 +49,14 @@ public class Quick {
      * @param a the array to be sorted
      */
     public static void sort(Comparable[] a) {
-        StdRandom.shuffle(a);
+//        StdRandom.shuffle(a);
         sort(a, 0, a.length - 1);
     }
 
     // quicksort the subarray from a[lo] to a[hi]
     private static void sort(Comparable[] a, int lo, int hi) { 
+    	
+    	show(a);
         if (hi <= lo) return;
         int j = partition(a, lo, hi);
         sort(a, lo, j-1);
@@ -149,8 +151,9 @@ public class Quick {
     // print array to standard output
     private static void show(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
-            StdOut.println(a[i]);
+            StdOut.print(a[i]+" ");
         }
+        System.out.println();
     }
 
     /**
@@ -160,7 +163,9 @@ public class Quick {
      * standard output, but this time, using the select method.
      */
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
+//        String[] a = StdIn.readAllStrings();
+    	
+    	Integer[]  a = {46,79,56,38,40,84};
         Quick.sort(a);
         show(a);
 
@@ -169,10 +174,10 @@ public class Quick {
 
         // display results again using select
         StdOut.println();
-        for (int i = 0; i < a.length; i++) {
-            String ith = (String) Quick.select(a, i);
-            StdOut.println(ith);
-        }
+//        for (int i = 0; i < a.length; i++) {
+//            String ith = (String) Quick.select(a, i);
+//            StdOut.println(ith);
+//        }
     }
 
 }

@@ -13,9 +13,24 @@ import java.util.Scanner;
  * @date 2015-3-27 上午11:20:27 
  * 
  */
-public class ActiveNetwork {
-	
+class ActiveNetwork {
+	static int m = 0;//不初始化也能通过编译，默认值为0
+	static int n = 0;
 	public static void main(String[] args){
+		
+//		int m;//不初始化不能通过编译
+//		ActiveNetwork an = new ActiveNetwork();
+//		System.out.println(an.m);
+		
+		
+		int m=10;
+		int x=20;
+		{
+			System.out.println("m+n="+m+n);//100,因为变成字符串连接了
+		}
+		x=m+n;
+		System.out.println("x="+x);//10
+		
 //		float a = 4f;
 //		float b = 2f;
 //		System.out.println(a%b);
@@ -80,54 +95,54 @@ public class ActiveNetwork {
 		 */
 		
 		
-		Scanner cin = new Scanner(System.in);
-		BigInteger a, b;
-		int c;
-		char op;
-		String s;
-
-		while (cin.hasNext()) {
-			a = cin.nextBigInteger();
-			s = cin.next();
-			op = s.charAt(0);
-			if (op == '+') {
-				b = cin.nextBigInteger();
-				System.out.println(a.add(b));
-			} else if (op == '-') {
-				b = cin.nextBigInteger();
-				System.out.println(a.subtract(b));
-			} else if (op == '*') {
-				b = cin.nextBigInteger();
-				System.out.println(a.multiply(b));
-			} else {
-				BigDecimal a1, b1, eps;
-				String s1, s2, temp;
-				s1 = a.toString();
-				a1 = new BigDecimal(s1);
-				b = cin.nextBigInteger();
-				s2 = b.toString();
-				b1 = new BigDecimal(s2);
-				c = cin.nextInt();
-				eps = a1.divide(b1, c, 4);
-				// System.out.println(a + " " + b + " " + c);
-				// System.out.println(a1.doubleValue() + " " + b1.doubleValue()
-				// + " " + c);
-				System.out.print(a.divide(b) + " " + a.mod(b) + " ");
-				if (c != 0) {
-					temp = "0.";
-					for (int i = 0; i < c; i++)
-						temp += "0";
-					DecimalFormat gd = new DecimalFormat(temp);
-					System.out.println(gd.format(eps));
-				} else
-					System.out.println(eps);
-			}
-		}
-		   
-		
-		
-		
-		
+//		Scanner cin = new Scanner(System.in);
+//		BigInteger a, b;
+//		int c;
+//		char op;
+//		String s;
+//
+//		while (cin.hasNext()) {
+//			a = cin.nextBigInteger();
+//			s = cin.next();
+//			op = s.charAt(0);
+//			if (op == '+') {
+//				b = cin.nextBigInteger();
+//				System.out.println(a.add(b));
+//			} else if (op == '-') {
+//				b = cin.nextBigInteger();
+//				System.out.println(a.subtract(b));
+//			} else if (op == '*') {
+//				b = cin.nextBigInteger();
+//				System.out.println(a.multiply(b));
+//			} else {
+//				BigDecimal a1, b1, eps;
+//				String s1, s2, temp;
+//				s1 = a.toString();
+//				a1 = new BigDecimal(s1);
+//				b = cin.nextBigInteger();
+//				s2 = b.toString();
+//				b1 = new BigDecimal(s2);
+//				c = cin.nextInt();
+//				eps = a1.divide(b1, c, 4);
+//				// System.out.println(a + " " + b + " " + c);
+//				// System.out.println(a1.doubleValue() + " " + b1.doubleValue()
+//				// + " " + c);
+//				System.out.print(a.divide(b) + " " + a.mod(b) + " ");
+//				if (c != 0) {
+//					temp = "0.";
+//					for (int i = 0; i < c; i++)
+//						temp += "0";
+//					DecimalFormat gd = new DecimalFormat(temp);
+//					System.out.println(gd.format(eps));
+//				} else
+//					System.out.println(eps);
+//			}
+//		}
+//		   
+//		
+//		
+//		
+//		
 	}
 	
 	

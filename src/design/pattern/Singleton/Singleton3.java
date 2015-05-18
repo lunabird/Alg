@@ -4,7 +4,7 @@
  * @version 
  * @date 2015-3-31
  */
-package design.pattern;
+package design.pattern.Singleton;
 
 import java.util.HashMap;
 import java.util.Map;
