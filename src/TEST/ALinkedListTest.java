@@ -1,10 +1,14 @@
 package TEST;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
 import java.util.Stack;
 
 class ALinkedListTest {
+	
+	
 
 	public static void main(String[] args){
 		//LinkedList list = new LinkedList();
@@ -25,16 +29,24 @@ class ALinkedListTest {
 //		}
 		
 		
-		Stack<Integer> stack1 =new Stack<Integer>();
-		Deque<Integer> stack = new ArrayDeque<Integer>();
-		stack.push(123);
-		stack.push(134);
-		stack.push(444);
-		while(!stack.isEmpty()){
-			System.out.println(stack.pop());
+//		Stack<Integer> stack1 =new Stack<Integer>();
+//		Deque<Integer> stack = new ArrayDeque<Integer>();
+//		stack.push(123);
+//		stack.push(134);
+//		stack.push(444);
+//		while(!stack.isEmpty()){
+//			System.out.println(stack.pop());
+//		}
+		int[] dfg = {34,57,0,8,3,332,6};
+		
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		a.add(56);
+		for(int i=0;i<dfg.length;i++){
+			a.add(dfg[i]);
 		}
 		
-		
+		Collections.sort(a);
+		System.out.println(a);
 	}
 }
 class LinkedListNode{
@@ -46,7 +58,7 @@ class LinkedListNode{
 		next = null;
 	}
 }
-//Ë«ÏòÁ´±í
+//Ë«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 class TwoSideLinkedListNode{
 	int data;
 	TwoSideLinkedListNode prev;

@@ -5,27 +5,27 @@ package crazyJava;
  * @brief 
  * @author huangpeng
  * @version 
- * @date 2015-3-25 ÏÂÎç4:48:52 
+ * @date 2015-3-25 ï¿½ï¿½ï¿½ï¿½4:48:52 
  * 
  */
 class Tester{
 	static{
-		System.out.println("Tester ÀàµÄ¾²Ì¬³õÊ¼»¯......");
+		System.out.println("Tester ï¿½ï¿½Ä¾ï¿½Ì¬ï¿½ï¿½Ê¼ï¿½ï¿½......");
 	}
 }
 public class ClassLoaderTest {
 	public static void main(String[] args) throws ClassNotFoundException{
 		/*
 		ClassLoader cl = ClassLoader.getSystemClassLoader();
-		//ÏÂÃæµÄÓï¾ä½ö½öÊÇ¼ÓÔØTesterÀà
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½Testerï¿½ï¿½
 		cl.loadClass("crazyJava.Tester");
-		System.out.println("ÏµÍ³¼ÓÔØTesterÀà");
-		//ÏÂÃæÓï¾ä²Å»á³õÊ¼»¯TesterÀà
+		System.out.println("ÏµÍ³ï¿½ï¿½ï¿½ï¿½Testerï¿½ï¿½");
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½ï¿½Ê¼ï¿½ï¿½Testerï¿½ï¿½
 		Class.forName("crazyJava.Tester");
 		*/
 		
-		char x = 'ÎÒ';
-		char c = 54;
-		System.out.println(x+","+c);
+//		char x = 'ï¿½ï¿½';
+//		char c = 54;
+//		System.out.println(x+","+c);
 	}
 }
