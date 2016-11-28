@@ -139,6 +139,24 @@ public class Solution {
         return resultArr;
         
     }
+	public void deleteNode(ListNode node) {
+		node.val = node.next.val;
+		node.next = node.next.next;
+    }
+	public boolean isSameTree(TreeNode p, TreeNode q) {
+		if (p == null && q == null) {
+			return true;
+		}else if(p!=null && q!=null){
+			if(p.val == q.val && isSameTree(p.left,q.left) && isSameTree(p.right,q.right) ){
+	        	return true;
+	        }else{
+	        	return false;
+	        }
+		}else{
+			return false;
+		}
+		
+    }
 	public static void main(String[] args) {
 		Solution s = new Solution();
 //		System.out.println(s.canConstruct("ab", "cbbacbb"));
@@ -148,7 +166,12 @@ public class Solution {
 //		s.singleNumber(nums);
 	}
 }
-
+//Definition for singly-linked list.
+class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) { val = x; }
+}
  //Definition for a binary tree node.
 class TreeNode {
 	int val;
