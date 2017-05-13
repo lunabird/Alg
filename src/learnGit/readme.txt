@@ -1,2 +1,2 @@
 learn git.
-create a new branch is quick.
+create a new git branch is quick & simple.
